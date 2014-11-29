@@ -12,11 +12,9 @@ Check out Singapore History Consultant's work on using Atmosphr to augment visit
 
 ![battle-box1](assets/battle-box1.jpg)
 
-![battle-box2](assets/battle-box2.jpg)
-
 We enhanced Battle Box by strategically placing iBeacons in each war room of the Battle Box. When visitors visit each room, they can use Atmosphr to connect to the ad-hoc wifi network and experience the war room as it was back in 1942.
 
-![rendered-battle-box](assets/rendered-battle-box.jpg)
+![rendered-battle-box](assets/rendered-battle-box.png)
 
 Experience the rest of Battle Box in Atmosphr when you visit.
 
