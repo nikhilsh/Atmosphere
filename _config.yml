@@ -15,7 +15,7 @@ highlighter: pygments
 
 
 ### content configuration ###
-title:       "Atmosphere"
+title:       "Atmosphr"
 keywords:    "vr,virtual reality,google,cardboard,tourism,hackathon"
 description: "Time-invariant travel system."
 source_link: "https://atmosphr.io/"

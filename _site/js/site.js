@@ -80,34 +80,34 @@ $(document).ready(function (){
     	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 20}, 400, "linear");
 	});
 
-    //links going to other sections nicely scroll
-	$(".container a").each(function(){
-        if ($(this).attr("href").charAt(0) == '#'){
-            $(this).on('click', function(event) {
-        		event.preventDefault();
-                var target = $(event.target).closest("a");
-                var targetHight =  $(target.attr("href")).offset().top
-            	$('html,body').animate({scrollTop: targetHight - 210}, 800, "easeInOutExpo");
-            });
-        }
-	});
-
 });
 
 // Dropzone class:
 var myDropzone = new Dropzone(".fa-cloud-upload", { 
     url: "/file/post",
+    acceptedFiles: '.jpg',
     accept: function(file,done) {
-        parseFile = new Parse.File(file.filename, file);
+        parseFile = new Parse.File(file.name, file);
         parseFile.save().then(function(file) {
             var Image = Parse.Object.extend("Image");
             var image = new Image();
-            image.put("file", file);
+            image.set("file", file);
             return image.save();
         }).then(function(image){
+            $('.dz-started').switchClass('fa-cloud-upload','fa-check');
+            setTimeout(function(){
+                $('.dz-started').switchClass('fa-check','fa-cloud-upload');
+            },3000);
             console.log("upload finish");
         });
-        console.log(file);
     }
 
+
+});
+
+myDropzone.on("error", function(e) {
+    $('.dz-started').switchClass('fa-cloud-upload','fa-ban');
+    setTimeout(function(){
+        $('.dz-started').switchClass('fa-ban','fa-cloud-upload');
+    },3000);
 });

@@ -12,5 +12,7 @@
 }
 
 .download-button {
-    background-color: #f39c12;
+    background-color: #f3b612;
+    margin-top: 3%;
+    padding: 13px 40px;
 }
