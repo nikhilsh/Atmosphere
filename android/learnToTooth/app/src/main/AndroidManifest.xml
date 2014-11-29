@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.biting.azure.learntotooth" >
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -21,6 +23,10 @@
         <activity
             android:name="com.biting.azure.learntotooth.Toother"
             android:label="@string/title_activity_toother" >
+        </activity>
+        <activity
+            android:name="com.biting.azure.learntotooth.WiFi_Activity"
+            android:label="@string/title_activity_wi_fi_" >
         </activity>
     </application>
 

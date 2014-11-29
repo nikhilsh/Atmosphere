@@ -1,7 +1,6 @@
 package com.biting.azure.learntotooth;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+
+
+
 
 
 public class MainActivity extends Activity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,11 @@ public class MainActivity extends Activity {
 
     public void startToothing(View view){
         Intent intent = new Intent(this, Toother.class);
+        startActivity(intent);
+    }
+
+    public void startWifi(View view){
+        Intent intent = new Intent(this, WiFi_Activity.class);
         startActivity(intent);
     }
     /**

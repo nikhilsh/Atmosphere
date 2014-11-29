@@ -10,6 +10,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.HandlerThread;
 import android.os.Looper;
@@ -22,6 +24,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.os.Handler;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -30,7 +36,9 @@ import java.util.UUID;
 
 
 public class Toother extends Activity {
-    Handler mHandler = new Handler(new HandlerThread("name").getLooper());
+
+    boolean isConnected = false;
+    String filePath = "/resources";
 
     public static final int REQUEST_ENABLE_BT = 1337;
     public static final String NAME = "Bluuu";
@@ -65,7 +73,7 @@ public class Toother extends Activity {
         }
     }
 
-    protected void OnDestoy(){
+    protected void onDestroy(){
         unregisterReceiver(mReceiver);
     }
 
@@ -137,11 +145,10 @@ public class Toother extends Activity {
             return rootView;
         }
     }
-    private class AcceptThread extends HandlerThread{
+    private class AcceptThread extends Thread{
         private final BluetoothServerSocket mmServerSocket;
 
-        public AcceptThread(String name) {
-            super(name);
+        public AcceptThread() {
             // Use a temporary object that is later assigned to mmServerSocket,
             // because mmServerSocket is final
             BluetoothServerSocket tmp = null;
@@ -164,11 +171,31 @@ public class Toother extends Activity {
                 // If a connection was accepted
                 if (socket != null) {
                     // Do work to manage the connection (in a separate thread)
-                    //TODO: Implement handler running
+                    ConnectedThread t = new ConnectedThread(socket);
+                    isConnected = true;
+
+                    //TODO: Set proper file path
+
+                    String filepath = "/sdcard/temp.png";
+                    File imagefile = new File(filepath);
+                    FileInputStream fis = null;
+                    try {
+                        fis = new FileInputStream(imagefile);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                    Bitmap bm = BitmapFactory.decodeStream(fis);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
+                    byte[] imageToSend = baos.toByteArray();
+
+                    t.write(imageToSend);
 
                     try {
                         mmServerSocket.close();
-                    } catch (IOException e) { }
+                        isConnected = false;
+                    } catch (IOException e) {isConnected = false; }
                     break;
                 }
             }
@@ -177,8 +204,9 @@ public class Toother extends Activity {
         /** Will cancel the listening socket, and cause the thread to finish */
         public void cancel() {
             try {
+                isConnected = false;
                 mmServerSocket.close();
-            } catch (IOException e) { }
+            } catch (IOException e) {isConnected = false; }
         }
     }
     private class ConnectThread extends Thread {
@@ -227,14 +255,13 @@ public class Toother extends Activity {
         }
     }
 
-    private class ConnectedThread extends HandlerThread {
+    private class ConnectedThread extends Thread {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
         private Runnable runnable;
 
-        public ConnectedThread(BluetoothSocket socket, String name) {
-            super(name);
+        public ConnectedThread(BluetoothSocket socket) {
             mmSocket = socket;
             InputStream tmpIn = null;
             OutputStream tmpOut = null;
@@ -261,9 +288,6 @@ public class Toother extends Activity {
                 try {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
-                    // Send the obtained bytes to the UI activity
-                    mHandler.obtainMessage(MESSAGE_READ, bytes, -1, buffer)
-                            .sendToTarget();
                 } catch (IOException e) {
                     break;
                 }
