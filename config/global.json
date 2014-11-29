@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Atmosphere": {
+            "applicationId": "aJqnnQOhftvuGI2uCRrZnRtzVCDwhiMDWFsyg9K7", 
+            "masterKey": "om2yNzc76KEs4DpCkHweZZjIeQBMpLfY4G3P9jaS"
+        }, 
+        "_default": {
+            "link": "Atmosphere"
+        }
+    }
+}
