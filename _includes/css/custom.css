@@ -1,3 +1,11 @@
+p {
+    line-height: 1.9em;
+}
+
+.container p {
+    font-size: 1.5em;
+}
+
 .dz-clickable {
     transition: all 0.5s ease;
 }
@@ -14,5 +22,10 @@
 .download-button {
     background-color: #f3b612;
     margin-top: 3%;
+    padding: 13px 40px;
+}
+
+.ticket-button {
+    background-color: #27ae60;
     padding: 13px 40px;
 }

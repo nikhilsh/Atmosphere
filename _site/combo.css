@@ -517,6 +517,14 @@ html { box-sizing: border-box; }
   
   
   
+  nav .p-customized-solutions { border-color: #8ab2d8; }
+  #customized-solutions { background-color: #8ab2d8 !important; color: #f8f8f8; }
+  #customized-solutions a { color: #f8f8f8; }
+  #customized-solutions .sectiondivider { color: #8ab2d8; }
+
+  
+  
+  
   nav .p-browse { border-color: #70a0cf; }
   #browse { background-color: #70a0cf !important; color: #f8f8f8; }
   #browse a { color: #f8f8f8; }
@@ -878,6 +886,14 @@ nav ul li:hover, nav ul li.active {
   }
 }
 
+p {
+    line-height: 1.9em;
+}
+
+.container p {
+    font-size: 1.5em;
+}
+
 .dz-clickable {
     transition: all 0.5s ease;
 }
@@ -894,5 +910,10 @@ nav ul li:hover, nav ul li.active {
 .download-button {
     background-color: #f3b612;
     margin-top: 3%;
+    padding: 13px 40px;
+}
+
+.ticket-button {
+    background-color: #27ae60;
     padding: 13px 40px;
 }
