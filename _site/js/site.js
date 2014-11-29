@@ -1,3 +1,4 @@
+Parse.initialize("aJqnnQOhftvuGI2uCRrZnRtzVCDwhiMDWFsyg9K7", "9JtsNsr0gCcaUKm3jSaHmtSgj8m9hmVN6n8kugWV");
 
 $.extend($.easing,
 {
@@ -76,7 +77,7 @@ $(document).ready(function (){
 
     //section divider icon click gently scrolls to reveal the section
 	$(".sectiondivider").on('click', function(event) {
-    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 50}, 400, "linear");
+    	$('html,body').animate({scrollTop: $(event.target.parentNode).offset().top - 20}, 400, "linear");
 	});
 
     //links going to other sections nicely scroll
@@ -86,10 +87,27 @@ $(document).ready(function (){
         		event.preventDefault();
                 var target = $(event.target).closest("a");
                 var targetHight =  $(target.attr("href")).offset().top
-            	$('html,body').animate({scrollTop: targetHight - 170}, 800, "easeInOutExpo");
+            	$('html,body').animate({scrollTop: targetHight - 210}, 800, "easeInOutExpo");
             });
         }
 	});
 
 });
 
+// Dropzone class:
+var myDropzone = new Dropzone(".fa-cloud-upload", { 
+    url: "/file/post",
+    accept: function(file,done) {
+        parseFile = new Parse.File(file.filename, file);
+        parseFile.save().then(function(file) {
+            var Image = Parse.Object.extend("Image");
+            var image = new Image();
+            image.put("file", file);
+            return image.save();
+        }).then(function(image){
+            console.log("upload finish");
+        });
+        console.log(file);
+    }
+
+});

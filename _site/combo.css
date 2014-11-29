@@ -476,11 +476,6 @@ html { box-sizing: border-box; }
 .text-white a { color: #f8f8f8; }
 .bg-white     { background-color: #f8f8f8 !important; }
 
-.border-blue { border-color: #49a7e9 !important; }
-.text-blue   { color: #49a7e9; }
-.text-blue a { color: #49a7e9; }
-.bg-blue     { background-color: #49a7e9 !important; }
-
 .border-green { border-color: #9bcf2f !important; }
 .text-green   { color: #9bcf2f; }
 .text-green a { color: #9bcf2f; }
@@ -501,8 +496,55 @@ html { box-sizing: border-box; }
 .text-turquoise a { color: #0fbfcf; }
 .bg-turquoise     { background-color: #0fbfcf !important; }
 
+.border-wet asphalt { border-color: #34495e !important; }
+.text-wet asphalt   { color: #34495e; }
+.text-wet asphalt a { color: #34495e; }
+.bg-wet asphalt     { background-color: #34495e !important; }
+
+.border-belize hole { border-color: #2980b9 !important; }
+.text-belize hole   { color: #2980b9; }
+.text-belize hole a { color: #2980b9; }
+.bg-belize hole     { background-color: #2980b9 !important; }
+
+.border-peter river { border-color: #3498db !important; }
+.text-peter river   { color: #3498db; }
+.text-peter river a { color: #3498db; }
+.bg-peter river     { background-color: #3498db !important; }
+
 
 /* ----- per-post colors! ----- */
+
+  
+  
+  
+  nav .p-browse { border-color: #70a0cf; }
+  #browse { background-color: #70a0cf !important; color: #f8f8f8; }
+  #browse a { color: #f8f8f8; }
+  #browse .sectiondivider { color: #70a0cf; }
+
+  
+  
+  
+  nav .p-submit { border-color: #558ec5; }
+  #submit { background-color: #558ec5 !important; color: #f8f8f8; }
+  #submit a { color: #f8f8f8; }
+  #submit .sectiondivider { color: #558ec5; }
+
+  
+  
+  
+  nav .p-second { border-color: #407cb6; }
+  #second { background-color: #407cb6 !important; color: #f8f8f8; }
+  #second a { color: #f8f8f8; }
+  #second .sectiondivider { color: #407cb6; }
+
+  
+  
+  
+  nav .p-top { border-color: #37699a; }
+  #top { background-color: #37699a !important; color: #f8f8f8; }
+  #top a { color: #f8f8f8; }
+  #top .sectiondivider { color: #37699a; }
 
 
 
@@ -836,3 +878,19 @@ nav ul li:hover, nav ul li.active {
   }
 }
 
+.dz-clickable {
+    transition: all 0.5s ease;
+}
+
+.dz-drag-hover {
+    opacity: 0.4;
+    transition: all 0.5s ease;
+}
+
+.dz-preview {
+    display:none;
+}
+
+.download-button {
+    background-color: #f39c12;
+}
