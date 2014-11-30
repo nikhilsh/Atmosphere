@@ -10,7 +10,7 @@ Atmosphr's API, Atmosphric, makes it really easy to customize itself to work on-
 
 Check out Singapore History Consultant's work on using Atmosphric to augment visitors' experience to Battle Box in Fort Canning!
 
-![battle-box1](assets/battle-box1.jpg)
+![battle-box1](assets/battle-box1.JPG)
 
 Wifi access points are stategically placed in each war room of the Battle Box to serve assets. When visitors visit each room, they can use Atmosphr via NFC to experience the war room as it was back in 1942.
 
