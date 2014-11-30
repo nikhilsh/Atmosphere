@@ -22,6 +22,7 @@ Get started as an Atmosphr developer:
 
 Atmosphric is also available on `brew` and `npm`:
     
-    brew install atmosphric
+    brew install atm
 
-    npm install -g atmosphric
+    npm install -g atm
+
