@@ -917,3 +917,11 @@ p {
     background-color: #27ae60;
     padding: 13px 40px;
 }
+
+pre {
+    text-align: left;
+}
+
+pre code {
+    font-size:1.3em;
+}
