@@ -16,7 +16,7 @@ Wifi access points are stategically placed in each war room of the Battle Box to
 
 ![rendered-battle-box](assets/rendered-battle-box.png)
 
-Get started as an Atmopshr developer:
+Get started as an Atmosphr developer:
 
 <a class="pure-button download-button"><i class="fa fa-download fa-lg"></i> Download Atmosphric</a>
 
