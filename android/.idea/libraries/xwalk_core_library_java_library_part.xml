@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="xwalk_core_library_java_library_part">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/crosswalkwebview10392356arm/libs/xwalk_core_library_java_library_part.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atmosphr</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container text-center">
+        <p class="warning-p">
+            Confirm your current location by selecting a landmark from the list.
+        </p>
+        <form id="location-select" class="pure-form pure-form-stacked warning-dropdown" name="location">
+            <select id="location-list">
+                <option value="mw">Milennia Walk</option>
+                <option value="awesomey">Awesomey</option>
+                <option value="r328">Room 328</option>
+            </select>
+            <input type="submit" name="location" class="location-button" />
+        </form>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $('#location-select').submit(function(event){
+            event.preventDefault();
+            var what = $('#location-list').val();
+            window.location = "panorama.html?img=" + what +'.jpg';
+        });
+    </script>
+</body>
+</html>

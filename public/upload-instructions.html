@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atmosphr</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container text-center">
+        <p class="warning-p">
+            To take a panorama, we use and recommend Google's Photo Sphere app.
+        </p>
+        <a class="pure-button button upload-button" href="#" onclick="uploadButton()">Upload</a>
+        <input type="file" accept="image/*" id="capture" style="opacity:0;">
+    </div>
+    <script src="extern/jquery.js"></script>
+    <script src="extern/parse-1.3.2.min.js"></script>
+    <script type="text/javascript">
+        Parse.initialize("aJqnnQOhftvuGI2uCRrZnRtzVCDwhiMDWFsyg9K7", "9JtsNsr0gCcaUKm3jSaHmtSgj8m9hmVN6n8kugWV");
+        var uploadButton = function () {
+            $('#capture').click();
+        };
+        $('#capture').on('change', function() {
+            var fileUploadControl = $(this)[0];
+            var imageType = /image.*/;
+            if (fileUploadControl.files.length > 0) {
+                var file = fileUploadControl.files[0];
+                if (!file.type.match(imageType)) {
+                    alert("Not an image.", "Error");
+                    return;
+                }
+                var parseFile = new Parse.File(file.name, file);
+                parseFile.save().then(function (file) {
+                    var Image = Parse.Object.extend("Image");
+                    var image = new Image();
+                    image.set('file', file);
+                    return image.save();
+                }).then(function (image) {
+                    alert("Upload complete!")
+                }, function (error) {
+                    alert(error.code + ' ' + error.message);
+                })
+            }
+        });
+    </script>
+</body>
+</html>
