@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\Workspace\android\atmosphr\app\build\intermediates\pre-dexed\debug\classes-652801388aa52e941927b5702def137d0527f552.jar"
+        jar="D:\Workspace\android\atmosphr\app\build\intermediates\exploded-aar\atmosphr\crosswalkwebview10392356arm\unspecified\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c4b7b0ed2f8a36701e9332f41cd5c32812328e5"/>
+    <item
+        dex="D:\Workspace\android\atmosphr\app\build\intermediates\pre-dexed\debug\xwalk_core_library_java_library_part-14f135886afa968b68497657f6585dd4566f89c4.jar"
+        jar="D:\Workspace\android\atmosphr\app\build\intermediates\exploded-aar\atmosphr\crosswalkwebview10392356arm\unspecified\libs\xwalk_core_library_java_library_part.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="406e523885f0490e364814e7b307ec4d249525a7"/>
+    <item
+        dex="D:\Workspace\android\atmosphr\app\build\intermediates\pre-dexed\debug\xwalk_core_library_java_app_part-4bcaa3d05ab4b7ed06ee57ebec211243449a13f8.jar"
+        jar="D:\Workspace\android\atmosphr\app\build\intermediates\exploded-aar\atmosphr\crosswalkwebview10392356arm\unspecified\libs\xwalk_core_library_java_app_part.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="110c51f920db5e43e620663ee778be13d9d7c977"/>
+
+</pre-dex-items>

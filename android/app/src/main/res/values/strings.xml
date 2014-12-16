@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Atmosphr</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+<<<<<<< HEAD:android/app/src/main/res/values/strings.xml
+=======
+    <string name="title_activity_toother">Toother</string>
+    <string name="title_activity_wi_fi_">WiFi_Activity</string>
+>>>>>>> origin/master:android/learnToTooth/app/src/main/res/values/strings.xml
+
+</resources>
